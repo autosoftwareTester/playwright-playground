@@ -1,0 +1,17 @@
+name: jira-validate
+on: [push, pull_request]
+
+jobs:
+  jira-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dputman/jira-validate@main
+        name: jira-validate
+        with:
+          jira-username: ${{ secrets.JIRA_USERNAME }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          jira-token: ${{ secrets.JIRA_TOKEN }}
+          jira-base-url: https://workkingsam.atlassian.net/
+          skip-branches: '^(production-release|main|release\/v\d+)$'
+          skip-comments: true
+          pr-threshold: 1000
