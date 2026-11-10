@@ -42,7 +42,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
-    storageState: ".auth/auth.json",
+    storageState: "auth/auth.json",
     actionTimeout: 10000, // 10 seconds
     navigationTimeout: 30000, // 30 seconds
   },
